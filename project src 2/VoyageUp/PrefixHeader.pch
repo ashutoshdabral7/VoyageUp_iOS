@@ -1,0 +1,46 @@
+//
+//  PrefixHeader.pch
+//  VoyageUp
+//
+//  Created by Deepak on 30/04/15.
+//  Copyright (c) 2015 Deepak. All rights reserved.
+//
+
+#ifndef VoyageUp_PrefixHeader_pch
+#define VoyageUp_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import "Constants.h"
+#import "AppDelegate.h"
+#import "customLabel.h"
+#import "helper.h"
+#import "SCLAlertView.h"
+#import "InputValidator.h"
+#import "Messages.h"
+#import "UITextField+padding.h"
+#import "myButton.h"
+#import "customLabel.h"
+#import "SLPagingViewController.h"
+#import "HttpUtility.h"
+#import "SVProgressHUD.h"
+#import "VoyageUpAPIManager.h"
+#import "DataStoreManager.h"
+#import "ProfileDetails.h"
+#import "connectionItems.h"
+#import "NSString-Utilities.h"
+#import "NSDictionary+NullValidation.h"
+#import "Questions.h"
+#import "UIImageView+AFNetworking.h"
+#import "VUChatMessageViewController.h"
+#import "Sharing.h"
+#import <CoreLocation/CoreLocation.h>
+#import "latestMessages.h"
+#import "SSKeychain.h"
+#import "Notification.h"
+#endif
