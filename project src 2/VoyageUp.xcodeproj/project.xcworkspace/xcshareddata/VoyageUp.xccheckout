@@ -10,31 +10,31 @@
 	<string>VoyageUp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E12BDF2EB2AD5A581C595B68FA48BB6FE415E702</key>
-		<string>https://bitbucket.org/deepaksasindran480/voyage.git</string>
+		<key>7B103CADD1C88330C87CB0B2986BDAFEC7664B24</key>
+		<string>https://github.com/deepaksasindran480/VoyageUp_iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>VoyageUp.xcodeproj</string>
+	<string>project src 2/VoyageUp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E12BDF2EB2AD5A581C595B68FA48BB6FE415E702</key>
-		<string>../..</string>
+		<key>7B103CADD1C88330C87CB0B2986BDAFEC7664B24</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://bitbucket.org/deepaksasindran480/voyage.git</string>
+	<string>https://github.com/deepaksasindran480/VoyageUp_iOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E12BDF2EB2AD5A581C595B68FA48BB6FE415E702</string>
+	<string>7B103CADD1C88330C87CB0B2986BDAFEC7664B24</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E12BDF2EB2AD5A581C595B68FA48BB6FE415E702</string>
+			<string>7B103CADD1C88330C87CB0B2986BDAFEC7664B24</string>
 			<key>IDESourceControlWCCName</key>
-			<string>project%20src</string>
+			<string>VoyageUp_iOS</string>
 		</dict>
 	</array>
 </dict>
