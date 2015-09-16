@@ -486,7 +486,6 @@
 		004674F11AE57399007F861E /* VoyageUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoyageUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		004674F51AE57399007F861E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004674F61AE57399007F861E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
-		004674F81AE57399007F861E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		004674F91AE57399007F861E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		004675011AE57399007F861E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0046750A1AE57399007F861E /* VoyageUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoyageUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1209,7 +1208,6 @@
 				0086F2471B163DA6006D7D28 /* Main.storyboard */,
 				004674F61AE57399007F861E /* main.m */,
 				004674F91AE57399007F861E /* AppDelegate.m */,
-				004674F81AE57399007F861E /* AppDelegate.h */,
 			);
 			name = Main;
 			path = VoyageUp/Main;
