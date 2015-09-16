@@ -1030,6 +1030,7 @@
 		00DFFA5A1AFBE3AD00AFC68A /* helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helper.m; sourceTree = "<group>"; };
 		00DFFA651AFBE7A700AFC68A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		00DFFA671AFBE7A700AFC68A /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		00E67C681BA9FEFA008459C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00E70E231AF93CD500D63040 /* NeoSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeoSans-Bold.otf"; sourceTree = "<group>"; };
 		00EBC9351B0A3A27004BC967 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		00EBC9361B0A3A27004BC967 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
@@ -1207,6 +1208,7 @@
 				00DAD4151B1387CD000234DB /* storyBoard4.storyboard */,
 				0086F2471B163DA6006D7D28 /* Main.storyboard */,
 				004674F61AE57399007F861E /* main.m */,
+				00E67C681BA9FEFA008459C2 /* AppDelegate.h */,
 				004674F91AE57399007F861E /* AppDelegate.m */,
 			);
 			name = Main;
