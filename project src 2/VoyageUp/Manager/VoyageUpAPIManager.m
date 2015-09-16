@@ -944,6 +944,31 @@ constructingBodyWithBlock:^(id <AFMultipartFormData>formData)
      ];
     
 }
+-(void)DeleteAllMessages:(VoyageUpCompletionBlock)completionHandler
+{
+    
+    
+    [self GET:[HttpUtility getUrlWithPath:API_DELETE_ALL_MESSAGES]
+   parameters:nil
+      success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         if (completionHandler != nil)
+             completionHandler([(NSDictionary *)responseObject dictionaryByReplacingNullsWithStrings],nil);
+         
+         else
+         {
+             if ( delegate != nil && [delegate respondsToSelector:@selector(VoyageUpRestAPIManagerdelegate:WithResponseDictionary:)] )
+                 [delegate VoyageUpRestAPIManagerdelegate:self WithResponseDictionary:[(NSDictionary *)responseObject dictionaryByReplacingNullsWithStrings]];
+             
+         }
+     }
+      failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Some thing went to wrong, please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+     }showLoader:NO withText:@"Loading.."
+     ];
+    
+}
 -(void)getAllMessagesFromSingleUser:(NSDictionary*)postobject  WithCompletionblock:(VoyageUpCompletionBlock)completionHandler
 {
     

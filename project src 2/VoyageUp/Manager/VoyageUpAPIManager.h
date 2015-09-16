@@ -49,7 +49,7 @@ typedef void (^VoyageUpCompletionBlock)(NSDictionary*, NSError*);
 -(void)deleteMessage:(NSDictionary*)postobject  WithCompletionblock:(VoyageUpCompletionBlock)completionHandler;
 -(void)deleteMessageAutomatic:(NSDictionary*)postobject  WithCompletionblock:(VoyageUpCompletionBlock)completionHandler;
 //  chat ---
-
+-(void)DeleteAllMessages:(VoyageUpCompletionBlock)completionHandler;
 -(void)sendMessage:(NSDictionary*)postobject  WithCompletionblock:(VoyageUpCompletionBlock)completionHandler;
 -(void)GetLatestMessages:(VoyageUpCompletionBlock)completionHandler;
 -(void)getAllMessagesFromSingleUser:(NSDictionary*)postobject  WithCompletionblock:(VoyageUpCompletionBlock)completionHandler;

@@ -135,6 +135,7 @@ static NSString * const kClientId = @"349188679231-3g830iqsnh658js9a3dqajcrfoogt
                      appDelegate.firstTime=true;
                      [self.delegate LoginSuccess];
                      [self dismissViewControllerAnimated:YES completion:nil];
+                     [appDelegate dele]
                  }
                  else
                  {

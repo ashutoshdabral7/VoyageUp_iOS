@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
     
-    // [self prepareChatMessageArray];
+     [self deleteMessageAutomatic];
     ProfileDetails *profile=[ProfileDetails getProfileDetails];
     myName=profile.FullName;
     myImage=profile.ProfilePhoto;
@@ -80,7 +80,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self deleteMessageAutomatic];
+   
 }
 -(void) keyboardWillHide: (NSNotification *)notif
 {

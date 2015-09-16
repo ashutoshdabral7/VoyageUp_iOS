@@ -296,4 +296,15 @@
         
     }
 }
+-(void)DeleteAllMessages
+{
+    
+    [[VoyageUpAPIManager sharedManager] DeleteAllMessages:^(NSDictionary*result,NSError *error) {
+        
+       
+    }];
+    
+    
+}
+
 @end

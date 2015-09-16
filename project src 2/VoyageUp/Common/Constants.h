@@ -60,7 +60,7 @@
 #define API_GET_LATEST_MSGS            @"getalllatestmessages"
 #define API_GET_ALL_SINGLE_USER_MSGS    @"getallmessage"
 #define API_DELETE_MESSAGE             @"deleteMessage"
-
+#define API_DELETE_ALL_MESSAGES         @"delete_all"
 
 
 
