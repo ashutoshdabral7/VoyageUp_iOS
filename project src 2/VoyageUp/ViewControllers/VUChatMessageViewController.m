@@ -21,11 +21,11 @@
 {
     [super viewDidLoad];
     
-     [self deleteMessageAutomatic];
+    // [self prepareChatMessageArray];
     ProfileDetails *profile=[ProfileDetails getProfileDetails];
     myName=profile.FullName;
     myImage=profile.ProfilePhoto;
-  UITapGestureRecognizer*  tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    UITapGestureRecognizer*  tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.chatListTableView addGestureRecognizer:tap];
     self.msgTextView.layer.borderColor = [UIColor colorWithRed:210.0/255.0 green:210.0/255.0 blue:210.0/255.0 alpha:1.0].CGColor;
     self.msgTextView.layer.borderWidth = 1.0f;
@@ -80,7 +80,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-   
+    // [self deleteMessageAutomatic];
 }
 -(void) keyboardWillHide: (NSNotification *)notif
 {
@@ -103,32 +103,33 @@
 #pragma mark - event handlers
 - (IBAction)sendNewMessage:(id)sender
 {
-   
+    
     if (self.msgTextView.text.length>0){
         LIMessage *message1 = [[LIMessage alloc] init];
         message1.messageText =self.msgTextView.text;
         message1.messageMode = LIMESSAGE_MODE_SENT;
         [_arrayChatMessages addObject:message1];
         [_chatListTableView reloadData];
+        
         [self SendMessage:self.msgTextView.text];
         @try {
             if (_arrayChatMessages.count>0) {
-                       NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:_arrayChatMessages.count-1];
-            [_chatListTableView scrollToRowAtIndexPath: ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+                NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:_arrayChatMessages.count-1];
+                [_chatListTableView scrollToRowAtIndexPath: ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
             }
         }
         @catch (NSException *exception) {
             
         }
-       
-           }
+        
+    }
 }
 - (IBAction)clearConversation:(id)sender
 {
     
-     UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Delete" message:@"Are you sure want to delete this conversation?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-     
-     [alert show];
+    UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Delete" message:@"Are you sure want to delete this conversation?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    
+    [alert show];
 }
 
 
@@ -136,11 +137,11 @@
 {
     
     if (buttonIndex==0) {
-       
+        
     }
     else if(buttonIndex==1)
     {
-         [self deleteMessage];
+        [self deleteMessage];
     }
 }
 #pragma mark api calls
@@ -237,8 +238,8 @@
              
              if (result != nil)
              {
-               
-                   [self getAllMessages];
+                 
+                 [self getAllMessages];
              }
              
          }
@@ -246,7 +247,7 @@
              
              
          }
-        
+         
      }];
 }
 -(void)deleteMessageAutomatic{
@@ -261,7 +262,7 @@
              if (result != nil)
              {
                  
-                
+                 
              }
              
          }
@@ -276,7 +277,7 @@
 #pragma mark - message manager methods -stop
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-   // [self.view endEditing:YES];
+    // [self.view endEditing:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -334,7 +335,7 @@
     }
     return cell;
     
-      
+    
 }
 
 #pragma mark - ITextView delegate
@@ -357,5 +358,5 @@
     return YES;
     
     
-   }
+}
 @end

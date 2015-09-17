@@ -134,8 +134,8 @@ static NSString * const kClientId = @"349188679231-3g830iqsnh658js9a3dqajcrfoogt
                      [DataStoreManager saveUserName:loginType password:password];
                      appDelegate.firstTime=true;
                      [self.delegate LoginSuccess];
+                     [appDelegate DeleteAllMessages];
                      [self dismissViewControllerAnimated:YES completion:nil];
-                     
                  }
                  else
                  {

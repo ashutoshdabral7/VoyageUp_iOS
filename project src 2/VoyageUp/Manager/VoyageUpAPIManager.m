@@ -964,7 +964,7 @@ constructingBodyWithBlock:^(id <AFMultipartFormData>formData)
      }
       failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
-         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Some thing went to wrong, please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+         
      }showLoader:NO withText:@"Loading.."
      ];
     
