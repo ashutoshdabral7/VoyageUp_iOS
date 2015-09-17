@@ -23,6 +23,7 @@
 @property (strong, nonatomic)CLPlacemark *placemark;
 @property (nonatomic, assign) BOOL Islogin;
 @property (nonatomic, retain) NSString *apns_token;
+@property (nonatomic, retain) NSString *apns_token_temp;
 @property (nonatomic, retain) NSString *network_token;
 @property (nonatomic, retain) NSString *api_key;
 @property (nonatomic, retain) NSString *Latitude;
@@ -31,6 +32,6 @@
 @property BOOL signUp;
 @property (nonatomic, assign) BOOL firstTime;
 - (void)locationUpdate:(NSString*)latitude;
-
+-(void)DeleteAllMessages;
 @end
 

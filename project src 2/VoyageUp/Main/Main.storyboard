@@ -3358,6 +3358,9 @@
                                                 <include reference="nPx-v6-pGh"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="changeSlider1:" destination="muT-bb-piJ" eventType="valueChanged" id="whb-Kg-yQd"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -5511,10 +5514,10 @@
                                 <exclude reference="8a8-4E-fdk"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Lmk-4i-fv1"/>
                                 <exclude reference="Iye-Vw-QOa"/>
                                 <exclude reference="OL4-jf-arg"/>
                                 <exclude reference="oGs-Wc-qyz"/>
-                                <exclude reference="Lmk-4i-fv1"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -5522,10 +5525,10 @@
                                 <include reference="8a8-4E-fdk"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Lmk-4i-fv1"/>
                                 <include reference="Iye-Vw-QOa"/>
                                 <include reference="OL4-jf-arg"/>
                                 <include reference="oGs-Wc-qyz"/>
-                                <include reference="Lmk-4i-fv1"/>
                             </mask>
                         </variation>
                     </view>

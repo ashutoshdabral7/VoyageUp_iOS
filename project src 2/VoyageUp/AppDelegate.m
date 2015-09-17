@@ -73,6 +73,7 @@
     NSData* pushToken = [[NSData alloc] initWithData:deviceToken];
     NSString* token = [[[[pushToken description] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""];
     self.apns_token = token;
+    self.apns_token_temp = token;
     
 }
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
