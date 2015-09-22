@@ -13,6 +13,7 @@
 @interface ContactsListViewController : UIViewController<loginSuccessDelegate>
 {
     NSArray *userListArray;
+    NSTimer *loadUsers;
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *view_emptyList;

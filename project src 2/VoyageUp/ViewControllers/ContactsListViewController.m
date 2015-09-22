@@ -41,7 +41,12 @@
 
     
 }
-
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    if (loadUsers)
+    [loadUsers invalidate];
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -60,11 +65,20 @@
     }
  
     appDelegate.firstTime=false;
+    loadUsers = [NSTimer scheduledTimerWithTimeInterval:60.0
+                                                      target:self
+                                                    selector:@selector(loadUsersTimer)
+                                                    userInfo:nil
+                                                     repeats:YES];
     
 }
 -(IBAction)reloadList:(id)sender
 {
     [self LoadUsers:YES];
+}
+-(void)loadUsersTimer
+{
+    [self LoadUsers:NO];
 }
 #pragma mark api call
 - (void)LoadUsers:(BOOL)loader
