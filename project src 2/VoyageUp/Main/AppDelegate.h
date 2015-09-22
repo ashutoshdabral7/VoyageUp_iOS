@@ -18,7 +18,7 @@
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) CLLocationManager *locationManager;
+//@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic)CLGeocoder *geocoder;
 @property (strong, nonatomic)CLPlacemark *placemark;
 @property (nonatomic, assign) BOOL Islogin;
