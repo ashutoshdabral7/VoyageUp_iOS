@@ -103,26 +103,31 @@
 #pragma mark - event handlers
 - (IBAction)sendNewMessage:(id)sender
 {
-    
-    if (self.msgTextView.text.length>0){
-        LIMessage *message1 = [[LIMessage alloc] init];
-        message1.messageText =self.msgTextView.text;
-        message1.messageMode = LIMESSAGE_MODE_SENT;
-        [_arrayChatMessages addObject:message1];
-        [_chatListTableView reloadData];
-        
-        [self SendMessage:self.msgTextView.text];
-        @try {
-            if (_arrayChatMessages.count>0) {
-                NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:_arrayChatMessages.count-1];
-                [_chatListTableView scrollToRowAtIndexPath: ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+    @try {
+        if (self.msgTextView.text.length>0){
+            LIMessage *message1 = [[LIMessage alloc] init];
+            message1.messageText =self.msgTextView.text;
+            message1.messageMode = LIMESSAGE_MODE_SENT;
+            [_arrayChatMessages addObject:message1];
+            [_chatListTableView reloadData];
+            
+            [self SendMessage:self.msgTextView.text];
+            @try {
+                if (_arrayChatMessages.count>0) {
+                    NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:_arrayChatMessages.count-1];
+                    [_chatListTableView scrollToRowAtIndexPath: ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+                }
             }
-        }
-        @catch (NSException *exception) {
+            @catch (NSException *exception) {
+                
+            }
             
         }
+    }
+    @catch (NSException *exception) {
         
     }
+    
 }
 - (IBAction)clearConversation:(id)sender
 {
@@ -152,73 +157,43 @@
     
     [[VoyageUpAPIManager sharedManager] getAllMessagesFromSingleUser:postobject WithCompletionblock:^(NSDictionary*result,NSError *error)
      {
-         // @try {
-         
-         
-         if ([[result valueForKeyPath:@"status"] isEqualToString:@"success"])
-         {
-             NSArray *questionsArrayTemp=[result valueForKeyPath:@"result"];
-             NSMutableArray *qnArray = [NSMutableArray new];
-             for (NSDictionary *pack in questionsArrayTemp)
-             {
-                 [qnArray addObject:[LIMessage latestMessagesDictonery:pack]];
-             }
-             // [[DataStoreManager sharedDataStoreManager] setuserMatchesArray:qnArray
-             
-             LIMessage *lastmsg=[_arrayChatMessages objectAtIndex:_arrayChatMessages.count-1];
-             _arrayChatMessages=[[[qnArray reverseObjectEnumerator] allObjects]mutableCopy];
-             LIMessage *lastmsg1=[_arrayChatMessages objectAtIndex:_arrayChatMessages.count-1];
-             // _arrayChatMessages=qnArray;
-             @try {
-                 if (![lastmsg.messageId isEqualToString:lastmsg1.messageId])
-                     [self.chatListTableView reloadData];
-                 NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:_arrayChatMessages.count-1];
-                 [_chatListTableView scrollToRowAtIndexPath: ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
-                 
-             }
-             @catch (NSException *exception) {
-                 [self.chatListTableView reloadData];
-                 
-             }
-             
-             
-             
-         }
-         else if ([[result valueForKeyPath:@"status"] isEqualToString:@"failed"])
-         {
-             _arrayChatMessages=nil;
-             [self.chatListTableView reloadData];
-         }
-         //         }
-         //         @catch (NSException *exception){
-         //
-         //
-         //         }
-         
-     }];
-}
--(void)SendMessage:(NSString*)message
-{
-    NSString *uniText = [NSString stringWithUTF8String:[message UTF8String]];
-    NSData *msgData = [uniText dataUsingEncoding:NSNonLossyASCIIStringEncoding];
-    NSString *goodMsg = [[NSString alloc] initWithData:msgData encoding:NSUTF8StringEncoding];
-    
-    self.msgTextView.text=@"";
-    NSDictionary *postobject = [NSDictionary dictionaryWithObjectsAndKeys:
-                                self.userProfile.UserId,POST_CHAT_RECEIVER_ID,
-                                goodMsg,POST_CHAT_MESSAGE,
-                                nil];
-    
-    [[VoyageUpAPIManager sharedManager] sendMessage:postobject WithCompletionblock:^(NSDictionary*result,NSError *error)
-     {
          @try {
              
-             if (result != nil)
+             
+             if ([[result valueForKeyPath:@"status"] isEqualToString:@"success"])
              {
+                 NSArray *questionsArrayTemp=[result valueForKeyPath:@"result"];
+                 NSMutableArray *qnArray = [NSMutableArray new];
+                 for (NSDictionary *pack in questionsArrayTemp)
+                 {
+                     [qnArray addObject:[LIMessage latestMessagesDictonery:pack]];
+                 }
+                 // [[DataStoreManager sharedDataStoreManager] setuserMatchesArray:qnArray
+                 
+                 LIMessage *lastmsg=[_arrayChatMessages objectAtIndex:_arrayChatMessages.count-1];
+                 _arrayChatMessages=[[[qnArray reverseObjectEnumerator] allObjects]mutableCopy];
+                 LIMessage *lastmsg1=[_arrayChatMessages objectAtIndex:_arrayChatMessages.count-1];
+                 // _arrayChatMessages=qnArray;
+                 @try {
+                     if (![lastmsg.messageId isEqualToString:lastmsg1.messageId])
+                         [self.chatListTableView reloadData];
+                     NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:_arrayChatMessages.count-1];
+                     [_chatListTableView scrollToRowAtIndexPath: ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+                     
+                 }
+                 @catch (NSException *exception) {
+                     [self.chatListTableView reloadData];
+                     
+                 }
+                 
                  
                  
              }
-             
+             else if ([[result valueForKeyPath:@"status"] isEqualToString:@"failed"])
+             {
+                 _arrayChatMessages=nil;
+                 [self.chatListTableView reloadData];
+             }
          }
          @catch (NSException *exception){
              
@@ -226,6 +201,44 @@
          }
          
      }];
+}
+-(void)SendMessage:(NSString*)message
+{
+    @try {
+        
+        
+        NSString *uniText = [NSString stringWithUTF8String:[message UTF8String]];
+        NSData *msgData = [uniText dataUsingEncoding:NSNonLossyASCIIStringEncoding];
+        NSString *goodMsg = [[NSString alloc] initWithData:msgData encoding:NSUTF8StringEncoding];
+        
+        self.msgTextView.text=@"";
+        NSDictionary *postobject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    self.userProfile.UserId,POST_CHAT_RECEIVER_ID,
+                                    goodMsg,POST_CHAT_MESSAGE,
+                                    nil];
+        
+        [[VoyageUpAPIManager sharedManager] sendMessage:postobject WithCompletionblock:^(NSDictionary*result,NSError *error)
+         {
+             @try {
+                 
+                 if (result != nil)
+                 {
+                     
+                     
+                 }
+                 
+             }
+             @catch (NSException *exception){
+                 
+                 
+             }
+             
+         }];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    
 }
 -(void)deleteMessage{
     NSDictionary *postobject = [NSDictionary dictionaryWithObjectsAndKeys:

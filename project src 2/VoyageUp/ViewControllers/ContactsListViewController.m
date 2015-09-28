@@ -38,14 +38,14 @@
     [super viewDidAppear:animated];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate locationUpdate:nil];
-
+    
     
 }
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
     if (loadUsers)
-    [loadUsers invalidate];
+        [loadUsers invalidate];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -63,13 +63,13 @@
             [self LoadUsers:YES];
         
     }
- 
+    
     appDelegate.firstTime=false;
     loadUsers = [NSTimer scheduledTimerWithTimeInterval:60.0
-                                                      target:self
-                                                    selector:@selector(loadUsersTimer)
-                                                    userInfo:nil
-                                                     repeats:YES];
+                                                 target:self
+                                               selector:@selector(loadUsersTimer)
+                                               userInfo:nil
+                                                repeats:YES];
     
 }
 -(IBAction)reloadList:(id)sender
@@ -109,15 +109,15 @@
                      for (NSDictionary *pack in questionsArrayTemp)
                      {
                          ProfileDetails *profile=[ProfileDetails profileDetails:pack];
-//#ifdef DEBUG
+                         //#ifdef DEBUG
                          
-                        // [qnArray addObject:[ProfileDetails profileDetails:pack]];
+                         // [qnArray addObject:[ProfileDetails profileDetails:pack]];
                          
-//#else
-                       if ([profile.network_ID isEqualToString:netWorkID]) {
+                         //#else
+                         if ([profile.network_ID isEqualToString:netWorkID]) {
                              [qnArray addObject:[ProfileDetails profileDetails:pack]];
-                        }
-//#endif
+                         }
+                         //#endif
                          
                          
                          
@@ -230,10 +230,10 @@
 }
 -(void)showUserDetailsWithUserId:(NSString*)userid :(ProfileDetails*)profile
 {
-
+    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        appDelegate.firstTime=false;
-   MyProfileViewController *obj   = [self.storyboard instantiateViewControllerWithIdentifier:SB_ID_USER];
+    appDelegate.firstTime=false;
+    MyProfileViewController *obj   = [self.storyboard instantiateViewControllerWithIdentifier:SB_ID_USER];
     obj.user_id=userid;
     obj.profileDetails=profile;
     [self.navigationController pushViewController:obj animated:YES ];

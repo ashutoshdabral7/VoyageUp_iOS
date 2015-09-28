@@ -19,9 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    geocoder = [[CLGeocoder alloc] init];
-//    locationManager = [[CLLocationManager alloc] init];
-//    [self getCurrentLocation ];
+    //    geocoder = [[CLGeocoder alloc] init];
+    //    locationManager = [[CLLocationManager alloc] init];
+    //    [self getCurrentLocation ];
     [self registerForRemoteNotifications];
     //    SLPagingViewController *pageViewController  = self.window.rootViewController.childViewControllers.firstObject;
     //    pageViewController.navigationSideItemsStyle = SLNavigationSideItemsStyleOnBounds;
@@ -145,49 +145,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 #pragma mark location
-//- (void)getCurrentLocation{
-//    locationManager.delegate = self;
-//    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-//    
-//    [locationManager startUpdatingLocation];
-//    if(IS_OS_8_OR_LATER) {
-//        [self.locationManager requestAlwaysAuthorization];
-//        [self.locationManager requestWhenInUseAuthorization];
-//    }
-//}
-//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-//{
-//    CLLocation *currentLocation = newLocation;
-//    
-//    if (currentLocation != nil) {
-//        self.Latitude= [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-//        self.longitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-//    }
-//    
-//    // Stop Location Manager
-//    // [locationManager stopUpdatingLocation];
-//    
-//    //    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-//    //        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-//    //        if (error == nil && [placemarks count] > 0) {
-//    //            placemark = [placemarks lastObject];
-//    //            //            addressLabel.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
-//    //            //                                 placemark.subThoroughfare, placemark.thoroughfare,
-//    //            //                                 placemark.postalCode, placemark.locality,
-//    //            //                                 placemark.administrativeArea,
-//    //            //                                 placemark.country];
-//    //        } else {
-//    //            NSLog(@"%@", error.debugDescription);
-//    //        }
-//    //    } ];
-//    
-//}
-//- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-//{
-//    UIAlertView *errorAlert = [[UIAlertView alloc]
-//                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//    [errorAlert show];
-//}
+
 - (void)locationUpdate:(NSString*)latitude {
     
     @try
