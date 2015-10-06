@@ -202,9 +202,13 @@
             SSIDInfo = CFBridgingRelease(
                                          
                                          CNCopyCurrentNetworkInfo((__bridge CFStringRef)interfaceName));
-            
-            
-            self.network_token=[SSIDInfo valueForKey:@"SSID"];
+            /*{
+                BSSID = "8:5b232:e:63230:94:f8";
+                SSID = " Guest";
+                SSIDDATA = <45787065 344dsrer ewrwr343424 7374>;
+            }*/
+            NSLog(@"SSIDInfo  = %@",SSIDInfo);
+            self.network_token=[SSIDInfo valueForKey:@"BSSID"];
             
             BOOL isNotEmpty = (SSIDInfo.count > 0);
             
