@@ -30,14 +30,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadList:) name:UIApplicationWillEnterForegroundNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadList:) name:UIApplicationWillEnterForegroundNotification object:nil];
     // Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate locationUpdate:nil];
+//    [appDelegate locationUpdate:nil];
     
     
 }
@@ -62,14 +62,16 @@
         else
             [self LoadUsers:YES];
         
+        loadUsers = [NSTimer scheduledTimerWithTimeInterval:60.0
+                                                     target:self
+                                                   selector:@selector(loadUsersTimer)
+                                                   userInfo:nil
+                                                    repeats:YES];
+        
     }
     
     appDelegate.firstTime=false;
-    loadUsers = [NSTimer scheduledTimerWithTimeInterval:60.0
-                                                 target:self
-                                               selector:@selector(loadUsersTimer)
-                                               userInfo:nil
-                                                repeats:YES];
+    
     
 }
 -(IBAction)reloadList:(id)sender

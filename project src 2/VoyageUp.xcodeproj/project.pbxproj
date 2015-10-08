@@ -468,6 +468,7 @@
 		00FB1A631B14D4CD00113587 /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB1A611B14D4CD00113587 /* ZLSwipeableView.m */; };
 		00FB1A661B14D86300113587 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB1A651B14D86300113587 /* CardView.m */; };
 		00FB1A691B14D86E00113587 /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB1A681B14D86E00113587 /* UIColor+FlatColors.m */; };
+		BD81B0521BC6F660004DEB4C /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = BD81B0511BC6F660004DEB4C /* TODO */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1062,6 +1063,7 @@
 		00FB1A651B14D86300113587 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 		00FB1A671B14D86E00113587 /* UIColor+FlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors.h"; sourceTree = "<group>"; };
 		00FB1A681B14D86E00113587 /* UIColor+FlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatColors.m"; sourceTree = "<group>"; };
+		BD81B0511BC6F660004DEB4C /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1141,6 +1143,7 @@
 				004675011AE57399007F861E /* Images.xcassets */,
 				00476ED31AEFE6DC00A782E0 /* Subclassess */,
 				004674F41AE57399007F861E /* Supporting Files */,
+				BD81B0511BC6F660004DEB4C /* TODO */,
 			);
 			path = VoyageUp;
 			sourceTree = "<group>";
@@ -2390,6 +2393,7 @@
 				00DD82E71B124FAB000F324B /* AU@2x.png in Resources */,
 				00DD83841B124FAB000F324B /* NU@2x.png in Resources */,
 				00DB58E01AF3FC3F00083D52 /* bluemaskbig.png in Resources */,
+				BD81B0521BC6F660004DEB4C /* TODO in Resources */,
 				00DD83161B124FAB000F324B /* DM@2x.png in Resources */,
 				00EBC9581B0A76CA004BC967 /* table@3x.png in Resources */,
 				00DD83111B124FAB000F324B /* CY@2x.png in Resources */,
