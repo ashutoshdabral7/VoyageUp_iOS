@@ -208,7 +208,11 @@
                 SSIDDATA = <45787065 344dsrer ewrwr343424 7374>;
             }*/
             NSLog(@"SSIDInfo  = %@",SSIDInfo);
-            self.network_token=[SSIDInfo valueForKey:@"BSSID"];
+            NSString *bssidful=[SSIDInfo valueForKey:@"BSSID"];
+            NSString *ssid=[SSIDInfo valueForKey:@"SSID"];
+            NSString *bssid = [bssid substringToIndex:4];
+            
+            self.network_token=[NSString stringWithFormat:@"%@%@",ssid,bssid];
             
             BOOL isNotEmpty = (SSIDInfo.count > 0);
             
