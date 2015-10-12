@@ -28,7 +28,7 @@
     //    [pageViewController setCurrentIndex:1
     //                               animated:NO];
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    tabBarController.selectedIndex =0;
+//    tabBarController.selectedIndex =0;
     [tabBarController.tabBar setSelectedImageTintColor:COLOR_MAIN_BG];
     return YES;
 }
@@ -124,21 +124,28 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     //[self getCurrentLocation];
     //[self locationUpdate:nil];
-//    [self DeleteAllMessages];
+    [self DeleteAllMessages];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     // [self getCurrentLocation];
+    if (self.Islogin) {
+        [self startLocationUpdateTimer];
+    }
     
-//    locationUpdate = [NSTimer scheduledTimerWithTimeInterval:60.0
-//                                                      target:self
-//                                                    selector:@selector(locationUpdate:)
-//                                                    userInfo:nil
-//                                                     repeats:YES];
-    
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    tabBarController.selectedViewController=[tabBarController.viewControllers objectAtIndex:0];
+//    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+//    tabBarController.selectedViewController=[tabBarController.viewControllers objectAtIndex:0];
+}
+
+- (void)startLocationUpdateTimer {
+    if (!locationUpdate) {
+        locationUpdate = [NSTimer scheduledTimerWithTimeInterval:60.0
+                                                          target:self
+                                                        selector:@selector(locationUpdate:)
+                                                        userInfo:nil
+                                                         repeats:YES];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

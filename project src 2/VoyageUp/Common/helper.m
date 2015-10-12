@@ -237,7 +237,7 @@
     NSMutableString *randomString = [NSMutableString stringWithCapacity: 6];
     
     for (int i=0; i<6; i++) {
-        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length])]];
+        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform((uint32_t)[letters length])]];
     }
     
     return randomString;

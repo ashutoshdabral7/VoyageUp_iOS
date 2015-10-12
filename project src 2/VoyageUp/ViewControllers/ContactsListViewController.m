@@ -62,11 +62,15 @@
         else
             [self LoadUsers:YES];
         
-        loadUsers = [NSTimer scheduledTimerWithTimeInterval:60.0
-                                                     target:self
-                                                   selector:@selector(loadUsersTimer)
-                                                   userInfo:nil
-                                                    repeats:YES];
+        if (!loadUsers) {
+            loadUsers = [NSTimer scheduledTimerWithTimeInterval:60.0
+                                                         target:self
+                                                       selector:@selector(loadUsersTimer)
+                                                       userInfo:nil
+                                                        repeats:YES];
+        }
+        
+        [appDelegate startLocationUpdateTimer];
         
     }
     

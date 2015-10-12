@@ -33,5 +33,7 @@
 @property (nonatomic, assign) BOOL firstTime;
 - (void)locationUpdate:(NSString*)latitude;
 -(void)DeleteAllMessages;
+- (void)startLocationUpdateTimer;
+
 @end
 
