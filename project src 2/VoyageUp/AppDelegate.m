@@ -210,7 +210,7 @@
             NSLog(@"SSIDInfo  = %@",SSIDInfo);
             NSString *bssidful=[SSIDInfo valueForKey:@"BSSID"];
             NSString *ssid=[SSIDInfo valueForKey:@"SSID"];
-            NSString *bssid = [bssid substringToIndex:4];
+            NSString *bssid = [bssidful substringToIndex:4];
             
             self.network_token=[NSString stringWithFormat:@"%@%@",ssid,bssid];
             
