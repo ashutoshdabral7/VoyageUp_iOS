@@ -215,7 +215,7 @@
                 SSIDDATA = <45787065 344dsrer ewrwr343424 7374>;
             }*/
             NSLog(@"SSIDInfo  = %@",SSIDInfo);
-            NSString *bssidful=[SSIDInfo valueForKey:@"BSSID"];
+            NSString *bssidful=[NSString stringWithFormat:@"%@",[SSIDInfo valueForKey:@"BSSID"]];
             NSString *ssid=[SSIDInfo valueForKey:@"SSID"];
             NSString *bssid = [bssidful substringToIndex:4];
             
