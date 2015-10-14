@@ -148,6 +148,8 @@
 
 - (void)locationUpdate:(NSString*)latitude {
     
+    if (self.Islogin) {
+   
     @try
     {
         
@@ -181,6 +183,7 @@
     @catch (NSException *exception)
     {
         
+    }
     }
 }
 

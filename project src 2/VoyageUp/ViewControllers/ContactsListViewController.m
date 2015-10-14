@@ -78,6 +78,8 @@
 }
 -(void)loadUsersTimer
 {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+     if (appDelegate.Islogin)
     [self LoadUsers:NO];
 }
 #pragma mark api call
