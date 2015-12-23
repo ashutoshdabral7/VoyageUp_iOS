@@ -131,7 +131,7 @@
                  }
                  else
                  {
-                     [helper alertErrorUserLoad:title message:message delegate:self];
+                     //[helper alertErrorUserLoad:title message:message delegate:self];
                      [self stopCircleLoader];
                  }
              }

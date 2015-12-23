@@ -2674,7 +2674,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "386a645a-05cf-4f7e-ba65-388bbb7e292f";
+				PROVISIONING_PROFILE = "9045fdf8-63d7-4ef2-bbaa-fabb03e235b7";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -2703,7 +2703,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "386a645a-05cf-4f7e-ba65-388bbb7e292f";
+				PROVISIONING_PROFILE = "9045fdf8-63d7-4ef2-bbaa-fabb03e235b7";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
