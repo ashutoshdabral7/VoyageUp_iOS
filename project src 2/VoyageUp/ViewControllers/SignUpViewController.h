@@ -15,7 +15,7 @@
 - (void)signUpSuccess:(NSString *)usrName pswd:(NSString*)pswd autologin:(BOOL)status;
 @end
 @class GPPSignInButton;
-@interface SignUpViewController : UIViewController<GPPSignInDelegate,EMCCountryDelegate>
+@interface SignUpViewController : UIViewController<EMCCountryDelegate>
 {
      UITapGestureRecognizer *tap;
     IBOutlet UITextField *txt_firstName;

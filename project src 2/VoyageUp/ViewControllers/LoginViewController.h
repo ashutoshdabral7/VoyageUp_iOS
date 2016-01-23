@@ -8,14 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import <GooglePlus/GooglePlus.h>
-#import <GoogleOpenSource/GoogleOpenSource.h>
+
 #import "SignUpViewController.h"
 @class GPPSignInButton;
 @protocol loginSuccessDelegate <NSObject>
 - (void)LoginSuccess;
 @end
-@interface LoginViewController : UIViewController<UITextFieldDelegate,GPPSignInDelegate,signupSuccessDelegate>
+@interface LoginViewController : UIViewController<UITextFieldDelegate,signupSuccessDelegate>
 {
     IBOutlet UITextField *txt_passWord;
     IBOutlet UITextField *txt_userName;

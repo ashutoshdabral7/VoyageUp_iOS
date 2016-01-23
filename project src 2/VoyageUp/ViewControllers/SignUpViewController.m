@@ -21,25 +21,25 @@ static NSString * const kClientId = @"349188679231-3g830iqsnh658js9a3dqajcrfoogt
            initWithTarget:self
            action:@selector(dismissKeyboard)];
     // Do view setup here.
-    GPPSignIn *signIn = [GPPSignIn sharedInstance];
-    signIn.shouldFetchGooglePlusUser = YES;
-   // signIn.scopes= [NSArray arrayWithObjects:kGTLAuthScopePlusLogin, nil];
-    signIn.shouldFetchGoogleUserID=YES;
-    signIn.shouldFetchGoogleUserEmail=YES;
-    signIn.shouldFetchGooglePlusUser=YES;
-    //signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
-    
-    // You previously set kClientId in the "Initialize the Google+ client" step
-    signIn.clientID = kClientId;
-    
+//    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+//    signIn.shouldFetchGooglePlusUser = YES;
+//   // signIn.scopes= [NSArray arrayWithObjects:kGTLAuthScopePlusLogin, nil];
+//    signIn.shouldFetchGoogleUserID=YES;
+//    signIn.shouldFetchGoogleUserEmail=YES;
+//    signIn.shouldFetchGooglePlusUser=YES;
+//    //signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+//    
+//    // You previously set kClientId in the "Initialize the Google+ client" step
+//    signIn.clientID = kClientId;
+//    
     // Uncomment one of these two statements for the scope you chose in the previous step
    // signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
     //signIn.scopes = @[ @"profile" ];            // "profile" scope
     
     // Optional: declare signIn.actions, see "app activities"
-    signIn.delegate = self;
-    [self.signInButton setImage:nil forState:UIControlStateNormal];
-    self.signInButton.enabled=false;
+//    signIn.delegate = self;
+//    [self.signInButton setImage:nil forState:UIControlStateNormal];
+//    self.signInButton.enabled=false;
 }
 -(void)viewWillAppear:(BOOL)animated
 {

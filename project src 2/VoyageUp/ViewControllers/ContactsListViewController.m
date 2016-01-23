@@ -80,7 +80,7 @@
 {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
      if (appDelegate.Islogin)
-    [self LoadUsers:NO];
+    [self LoadUsersWithOutAlert];
 }
 #pragma mark api call
 - (void)LoadUsers:(BOOL)loader
@@ -145,14 +145,75 @@
              
          }
          @finally {
-             
+             [self stopCircleLoader];
          }
      }];
     
     
     
 }
-
+- (void)LoadUsersWithOutAlert
+{
+    NSDictionary *postobject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                POST_LATITUDE,POST_LATITUDE,
+                                POST_LOGITUDE,POST_LOGITUDE,
+                                POST_GEOFENCE_AREA,POST_GEOFENCE_AREA,
+                                nil];
+    
+    [[VoyageUpAPIManager sharedManager] getUsersWithOutAlert:postobject WithCompletionblock:^(NSDictionary*result,NSError *error)
+     {
+         @try {
+             
+             if (result != nil)
+             {
+                 NSString *title = [result objectForKey:@"title"];
+                 NSString *message = [result objectForKey:@"message"];
+                 
+                 if ([[result valueForKeyPath:@"status"] isEqualToString:@"success"])
+                 {
+                     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                     NSString *netWorkID=appDelegate.network_token;
+                     NSArray *questionsArrayTemp=[result valueForKeyPath:@"result"];
+                     NSMutableArray *qnArray = [NSMutableArray new];
+                     for (NSDictionary *pack in questionsArrayTemp)
+                     {
+                         ProfileDetails *profile=[ProfileDetails profileDetails:pack];
+                         //#ifdef DEBUG
+                         
+                         // [qnArray addObject:[ProfileDetails profileDetails:pack]];
+                         
+                         //#else
+                         if ([profile.network_ID isEqualToString:netWorkID]) {
+                             [qnArray addObject:[ProfileDetails profileDetails:pack]];
+                         }
+                         //#endif
+                         
+                         
+                         
+                     }
+                     [[DataStoreManager sharedDataStoreManager] setuserMatchesArray:qnArray];
+                     userListArray=[[DataStoreManager sharedDataStoreManager]getuserMatchesArray];
+                     [self.tableView reloadData];
+                                     }
+                 else
+                 {
+                    
+                 }
+             }
+             if (userListArray.count<1)
+                 [self showEmptyList:false];
+             
+             else
+                 [self showEmptyList:true];
+         }
+         @catch (NSException *exception) {
+             
+         }
+              }];
+    
+    
+    
+}
 
 -(void)ShowLogin{
     UIStoryboard *sb;

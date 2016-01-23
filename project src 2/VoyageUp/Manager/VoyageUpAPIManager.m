@@ -332,7 +332,7 @@ constructingBodyWithBlock:^(id <AFMultipartFormData>formData)
          if (completionHandler != nil)
              completionHandler(nil,error);
          
-         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Some thing went to wrong, please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+//         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Some thing went to wrong, please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
          
      }
     showLoader:NO withText:@"Loading"
@@ -401,7 +401,39 @@ constructingBodyWithBlock:^(id <AFMultipartFormData>formData)
          if (completionHandler != nil)
              completionHandler(nil,error);
          
-       [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Some thing went to wrong, please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+       //[[[UIAlertView alloc] initWithTitle:@"Error" message:@"Some thing went to wrong, please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+         
+     }
+    showLoader:NO withText:@"Loading"
+     ];
+}
+-(void)getUsersWithOutAlert:(NSDictionary*)postobject  WithCompletionblock:(VoyageUpCompletionBlock)completionHandler
+{
+    
+    [self POST:[HttpUtility getUrlWithPath:API_GET_USERS]
+    parameters:@{
+                 POST_LATITUDE:[postobject objectForKey:POST_LATITUDE],
+                 POST_LOGITUDE:[postobject objectForKey:POST_LOGITUDE],
+                 POST_GEOFENCE_AREA:[postobject objectForKey:POST_GEOFENCE_AREA]
+                 }
+       success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         if (completionHandler != nil)
+             completionHandler([(NSDictionary *)responseObject dictionaryByReplacingNullsWithStrings],nil);
+         
+         else
+         {
+             if ( delegate != nil && [delegate respondsToSelector:@selector(VoyageUpRestAPIManagerdelegate:WithResponseDictionary:)] )
+                 [delegate VoyageUpRestAPIManagerdelegate:self WithResponseDictionary:[(NSDictionary *)responseObject dictionaryByReplacingNullsWithStrings]];
+             
+         }
+     }
+       failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         //TODO: Show or handle error
+         if (completionHandler != nil)
+             completionHandler(nil,error);
+    
          
      }
     showLoader:NO withText:@"Loading"
@@ -753,7 +785,7 @@ constructingBodyWithBlock:^(id <AFMultipartFormData>formData)
      }
       failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
-         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Some thing went to wrong, please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+//         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Some thing went to wrong, please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
      }showLoader:NO withText:@"Loading.."
      ];
     
@@ -778,7 +810,7 @@ constructingBodyWithBlock:^(id <AFMultipartFormData>formData)
      }
       failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
-         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Some thing went to wrong, please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+//         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Some thing went to wrong, please try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
      }showLoader:NO withText:@"Loading.."
      ];
     

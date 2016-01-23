@@ -458,9 +458,6 @@
 		00EBC9561B0A76CA004BC967 /* table.png in Resources */ = {isa = PBXBuildFile; fileRef = 00EBC94D1B0A76CA004BC967 /* table.png */; };
 		00EBC9571B0A76CA004BC967 /* table@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00EBC94E1B0A76CA004BC967 /* table@2x.png */; };
 		00EBC9581B0A76CA004BC967 /* table@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00EBC94F1B0A76CA004BC967 /* table@3x.png */; };
-		00EBC95D1B0A77F2004BC967 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EBC95A1B0A77F2004BC967 /* GoogleOpenSource.framework */; };
-		00EBC95E1B0A77F2004BC967 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00EBC95B1B0A77F2004BC967 /* GooglePlus.bundle */; };
-		00EBC95F1B0A77F2004BC967 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EBC95C1B0A77F2004BC967 /* GooglePlus.framework */; };
 		00EBC9621B0A7B84004BC967 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EBC9611B0A7B84004BC967 /* AssetsLibrary.framework */; };
 		00EBC9641B0A7C80004BC967 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EBC9631B0A7C80004BC967 /* CoreText.framework */; };
 		00EBC9661B0A7C88004BC967 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EBC9651B0A7C88004BC967 /* CoreMotion.framework */; };
@@ -1048,9 +1045,6 @@
 		00EBC94D1B0A76CA004BC967 /* table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table.png; sourceTree = "<group>"; };
 		00EBC94E1B0A76CA004BC967 /* table@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table@2x.png"; sourceTree = "<group>"; };
 		00EBC94F1B0A76CA004BC967 /* table@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table@3x.png"; sourceTree = "<group>"; };
-		00EBC95A1B0A77F2004BC967 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
-		00EBC95B1B0A77F2004BC967 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
-		00EBC95C1B0A77F2004BC967 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
 		00EBC9611B0A7B84004BC967 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		00EBC9631B0A7C80004BC967 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		00EBC9651B0A7C88004BC967 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -1079,8 +1073,6 @@
 				00EBC9661B0A7C88004BC967 /* CoreMotion.framework in Frameworks */,
 				00EBC9641B0A7C80004BC967 /* CoreText.framework in Frameworks */,
 				00EBC9621B0A7B84004BC967 /* AssetsLibrary.framework in Frameworks */,
-				00EBC95F1B0A77F2004BC967 /* GooglePlus.framework in Frameworks */,
-				00EBC95D1B0A77F2004BC967 /* GoogleOpenSource.framework in Frameworks */,
 				00DFFA691AFBE7A700AFC68A /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1981,9 +1973,6 @@
 		00EBC9591B0A77F2004BC967 /* google */ = {
 			isa = PBXGroup;
 			children = (
-				00EBC95A1B0A77F2004BC967 /* GoogleOpenSource.framework */,
-				00EBC95B1B0A77F2004BC967 /* GooglePlus.bundle */,
-				00EBC95C1B0A77F2004BC967 /* GooglePlus.framework */,
 			);
 			path = google;
 			sourceTree = "<group>";
@@ -2286,7 +2275,6 @@
 				00DD83691B124FAB000F324B /* MH@2x.png in Resources */,
 				00DD83A61B124FAB000F324B /* SM@2x.png in Resources */,
 				00DD83211B124FAB000F324B /* FJ@2x.png in Resources */,
-				00EBC95E1B0A77F2004BC967 /* GooglePlus.bundle in Resources */,
 				00DD83BD1B124FAB000F324B /* TV@2x.png in Resources */,
 				00DC7BD51AF69009002B4A57 /* xButton.png in Resources */,
 				00DD83B41B124FAB000F324B /* TH@2x.png in Resources */,
@@ -2657,6 +2645,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VoyageUp/Libraries",
@@ -2674,7 +2663,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9045fdf8-63d7-4ef2-bbaa-fabb03e235b7";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -2686,6 +2675,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VoyageUp/Libraries",
@@ -2703,7 +2693,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9045fdf8-63d7-4ef2-bbaa-fabb03e235b7";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;

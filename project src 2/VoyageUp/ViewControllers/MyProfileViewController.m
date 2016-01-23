@@ -131,7 +131,7 @@
     _txt_Country.text = profileDetails.Country;
     _txt_dob.text = profileDetails.dob;
     if(!newPhoto){
-    if (profileDetails.ProfilePhoto.length>0)
+    if (profileDetails.ProfilePhoto!=nil)
         [self.userImageView1 setImageWithURL:[helper getImageUrl:profileDetails.ProfilePhoto]];
     }
     if ([profileDetails.LoginType isEqualToString:@"F"]) {

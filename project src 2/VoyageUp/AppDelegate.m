@@ -210,6 +210,9 @@
                 SSID = " Guest";
                 SSIDDATA = <45787065 344dsrer ewrwr343424 7374>;
             }*/
+            if (SSIDInfo!=nil) {
+                
+           
             NSLog(@"SSIDInfo  = %@",SSIDInfo);
             NSString *bssidful=[NSString stringWithFormat:@"%@",[SSIDInfo valueForKey:@"BSSID"]];
             NSString *ssid=[SSIDInfo valueForKey:@"SSID"];
@@ -226,7 +229,7 @@
             }
             
         }
-        
+        }
         //----------------
     }
     @catch (NSException *exception) {
