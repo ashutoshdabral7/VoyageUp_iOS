@@ -189,7 +189,7 @@
 
 -(void)getNetworkId
 {
-    self.network_token= [helper randomStringWithLength];//@"xxx";//
+    self.network_token=@"TP-LINK_F549C814:c";// [helper randomStringWithLength];//@"xxx";//
     @try {
         //------- get network id
         

@@ -79,7 +79,7 @@
 -(void)loadUsersTimer
 {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-     if (appDelegate.Islogin)
+    // if (appDelegate.Islogin)
     [self LoadUsersWithOutAlert];
 }
 #pragma mark api call

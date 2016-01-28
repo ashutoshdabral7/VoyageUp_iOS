@@ -8,7 +8,7 @@
 
 #import "MyProfileViewController.h"
 #import "Constants.h"
-
+#import <QuartzCore/QuartzCore.h>
 @interface MyProfileViewController ()
 
 @end
@@ -132,7 +132,35 @@
     _txt_dob.text = profileDetails.dob;
     if(!newPhoto){
     if (profileDetails.ProfilePhoto!=nil)
-        [self.userImageView1 setImageWithURL:[helper getImageUrl:profileDetails.ProfilePhoto]];
+       // [self.userImageView1 setImageWithURL:[helper getImageUrl:profileDetails.ProfilePhoto]];
+    {
+        self.userImageView1.image=[UIImage imageNamed:@"noimagebig"];
+//        CABasicAnimation* rotationAnimation;
+//        rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+//        rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+//        rotationAnimation.duration = 0.5;
+//        rotationAnimation.cumulative = YES;
+//        rotationAnimation.repeatCount = 10000;
+//        
+//        [self.userImageView1.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+//            NSString *cleansedImageUrl = [[helper getImageUrl:profileDetails.ProfilePhoto]stringByTrimmingCharactersInSet:
+//                                          [NSCharacterSet whitespaceCharacterSet]];
+//            NSURL *imageURLObj = [NSURL URLWithString:[cleansedImageUrl stringByReplacingOccurrencesOfString:@" " withString:@"%20"] ];
+            NSData *imgData = [NSData dataWithContentsOfURL:[helper getImageUrl:profileDetails.ProfilePhoto]];
+            if (imgData) {
+                UIImage *image = [UIImage imageWithData:imgData];
+                if (image) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.userImageView1 setImage:image];
+                        self.userImageView1.contentMode = UIViewContentModeScaleAspectFit;// fit the logo image inside the imageview
+                    });
+                }
+            }
+        });
+        
+    }
     }
     if ([profileDetails.LoginType isEqualToString:@"F"]) {
         self.btn_ChangePassword.enabled=false;

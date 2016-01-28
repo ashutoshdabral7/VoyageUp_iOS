@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VoyageUp/ViewControllers/MyProfileViewController.m"
-            timestampString = "472067168.853781"
+            timestampString = "475610441.62676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "763"
-            endingLineNumber = "763"
+            startingLineNumber = "791"
+            endingLineNumber = "791"
             landmarkName = "-setConnections1:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VoyageUp/ViewControllers/MyProfileViewController.m"
-            timestampString = "472067174.701289"
+            timestampString = "475610441.62676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "737"
-            endingLineNumber = "737"
+            startingLineNumber = "765"
+            endingLineNumber = "765"
             landmarkName = "-getMyConnections1"
             landmarkType = "5">
             <Locations>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VoyageUp/ViewControllers/MyProfileViewController.m"
-            timestampString = "472067300.194277"
+            timestampString = "475610441.62676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "615"
-            endingLineNumber = "615"
+            startingLineNumber = "643"
+            endingLineNumber = "643"
             landmarkName = "-changeValue:"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VoyageUp/ViewControllers/MyProfileViewController.m"
-            timestampString = "472067306.890147"
+            timestampString = "475610441.62676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "593"
-            endingLineNumber = "593"
+            startingLineNumber = "621"
+            endingLineNumber = "621"
             landmarkName = "-UpdateConnections:"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VoyageUp/ViewControllers/MyProfileViewController.m"
-            timestampString = "472067308.191289"
+            timestampString = "475610441.62676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "601"
-            endingLineNumber = "601"
+            startingLineNumber = "629"
+            endingLineNumber = "629"
             landmarkName = "-UpdateConnections:"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VoyageUp/ViewControllers/MyProfileViewController.m"
-            timestampString = "473109825.528997"
+            timestampString = "475610441.62676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "568"
-            endingLineNumber = "568"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
             landmarkName = "-getMyConnections"
             landmarkType = "5">
             <Locations>

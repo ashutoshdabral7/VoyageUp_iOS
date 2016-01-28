@@ -444,6 +444,7 @@
 		00DFFA5B1AFBE3AD00AFC68A /* helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DFFA5A1AFBE3AD00AFC68A /* helper.m */; };
 		00DFFA691AFBE7A700AFC68A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DFFA651AFBE7A700AFC68A /* FacebookSDK.framework */; };
 		00DFFA6B1AFBE7A700AFC68A /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00DFFA671AFBE7A700AFC68A /* FBUserSettingsViewResources.bundle */; };
+		00E264D11C59325A001013F8 /* loading1.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E264D01C59325A001013F8 /* loading1.png */; };
 		00EBC9381B0A3A27004BC967 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00EBC9351B0A3A27004BC967 /* SVProgressHUD.bundle */; };
 		00EBC9391B0A3A27004BC967 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EBC9371B0A3A27004BC967 /* SVProgressHUD.m */; };
 		00EBC93C1B0A3A6F004BC967 /* NSDictionary+NullValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EBC93B1B0A3A6F004BC967 /* NSDictionary+NullValidation.m */; };
@@ -1027,6 +1028,7 @@
 		00DFFA5A1AFBE3AD00AFC68A /* helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helper.m; sourceTree = "<group>"; };
 		00DFFA651AFBE7A700AFC68A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		00DFFA671AFBE7A700AFC68A /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		00E264D01C59325A001013F8 /* loading1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading1.png; sourceTree = "<group>"; };
 		00E67C681BA9FEFA008459C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00E70E231AF93CD500D63040 /* NeoSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeoSans-Bold.otf"; sourceTree = "<group>"; };
 		00EBC9351B0A3A27004BC967 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -1550,6 +1552,7 @@
 		00DB6A3B1B104B6E00D85647 /* noimage */ = {
 			isa = PBXGroup;
 			children = (
+				00E264D01C59325A001013F8 /* loading1.png */,
 				00DB6A3C1B104B6E00D85647 /* noimagebig.png */,
 				00DB6A3D1B104B6E00D85647 /* noimagebig@2x.png */,
 				00DB6A3E1B104B6E00D85647 /* noimagebig@3x.png */,
@@ -2276,6 +2279,7 @@
 				00DD83A61B124FAB000F324B /* SM@2x.png in Resources */,
 				00DD83211B124FAB000F324B /* FJ@2x.png in Resources */,
 				00DD83BD1B124FAB000F324B /* TV@2x.png in Resources */,
+				00E264D11C59325A001013F8 /* loading1.png in Resources */,
 				00DC7BD51AF69009002B4A57 /* xButton.png in Resources */,
 				00DD83B41B124FAB000F324B /* TH@2x.png in Resources */,
 				00DD837A1B124FAB000F324B /* NA@2x.png in Resources */,
